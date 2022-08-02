@@ -4,4 +4,4 @@
 - name: Install Pulse from DMG
   ansible.builtin.include_tasks: dmg-install.yml
   vars:
-    AppName: 'Pulse'
+    appName: 'Pulse'
