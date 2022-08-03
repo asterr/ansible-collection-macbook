@@ -16,8 +16,26 @@
 - command: "hdiutil attach ./tmp/'{{ appName }}'.dmg -nobrowse -mountpoint ./tmp/'{{ appName }}'"
   when: app_exists.stat.exists == False
 
-- shell: "cp -aR ./tmp/'{{ appName }}'/*.app /Applications/'{{ appName }}'.app"
-  when: app_exists.stat.exists == False
+- find:
+    paths: "./tmp/{{ appName }}/"
+    patterns: "*.app"
+  register: app_type
+
+- block:
+    - shell: "cp -aR ./tmp/'{{ appName }}'/*.app /Applications/'{{ appName }}'.app"
+      when: app_exists.stat.exists == False
+  when: app_type.matched != 0
+
+
+- find:
+    paths: "./tmp/{{ appName }}/"
+    patterns: "*.pkg"
+  register: pkg_type
+
+- block:
+    - shell: "installer -pkg '{{ pkg_type.files[0].path }}' -target /"
+      when: app_exists.stat.exists == False
+  when: pkg_type.matched != 0
 
 - command: "hdiutil detach ./tmp/'{{ appName }}'/"
   when: app_exists.stat.exists == False
