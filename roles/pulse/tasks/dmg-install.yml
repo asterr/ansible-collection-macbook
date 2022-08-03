@@ -35,6 +35,7 @@
 - block:
     - shell: "installer -pkg '{{ pkg_type.files[0].path }}' -target /"
       when: app_exists.stat.exists == False
+      become: true
   when: pkg_type.matched != 0
 
 - command: "hdiutil detach ./tmp/'{{ appName }}'/"
