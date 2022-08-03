@@ -13,13 +13,13 @@
 - get_url: "url={{ dmgURL }} dest=./tmp/{{ appName }}.dmg"
   when: app_exists.stat.exists == False
 
-- command: "hdiutil attach ./tmp/{{ appName }}.dmg -nobrowse -mountpoint ./tmp/{{ appName }}"
+- command: "hdiutil attach ./tmp/'{{ appName }}'.dmg -nobrowse -mountpoint ./tmp/'{{ appName }}'"
   when: app_exists.stat.exists == False
 
-- shell: "cp -aR ./tmp/{{ appName }}/*.app /Applications/{{ appName }}.app"
+- shell: "cp -aR ./tmp/'{{ appName }}'/*.app /Applications/'{{ appName }}'.app"
   when: app_exists.stat.exists == False
 
-- command: "hdiutil detach ./tmp/{{ appName }}/"
+- command: "hdiutil detach ./tmp/'{{ appName }}'/"
   when: app_exists.stat.exists == False
 
 - command: rm -R ./tmp/
