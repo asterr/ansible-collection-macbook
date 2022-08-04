@@ -1,6 +1,12 @@
 ---
 # tasks file for pulse
 
+- name: Download Pulse from Google Drive
+  ansible.builtin.get_url:
+    url: "{{ pulse_url }}"
+    dest: /Users/asterr/Downloads/ps-pulse-mac-9.1r11.5-b9451-installer.dmg
+    mode: u=rw,g=r,o=r
+
 - name: Install Pulse from DMG
   ansible.builtin.include_tasks: dmg-install.yml
   vars:
