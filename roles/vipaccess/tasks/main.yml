@@ -1,0 +1,16 @@
+---
+# tasks file for vipaccess
+
+- name: Download VIP Access
+  ansible.builtin.get_url:
+    url: "{{ vipaccess_url }}"
+    dest: /Users/asterr/Downloads/VIPAccessSecurityCode.dmg
+    mode: u=rw,g=r,o=r
+    checksum: "{{ vipaccess_checksum }}"
+
+- name: Install VIP Access from DMG
+  ansible.builtin.include_role:
+    name: dmg-install
+  vars:
+    appName: VIP Access
+    dmgURL: file:///Users/asterr/Downloads/VIPAccessSecurityCode.dmg

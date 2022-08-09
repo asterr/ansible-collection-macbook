@@ -1,0 +1,6 @@
+---
+# defaults file for vipaccess
+vipaccess_url: https://vip.symantec.com/downloadsMac
+
+vipaccess_checksum: sha512:22d0e017626403b36a762e2e5bde4167b907f61ea330d33e31bc75c141dd0c2efc27910cff70cbb8005a603b3b65439ffc563f37fb9120f527cefbafa6db2ef8
+# vipaccess_checksum: sha512:81dd06537e1d7956859123c247338b91ad3897dc15a188f463cfe9f7685ba0c5c7bb66193e9abf37d6367acb6bdc4f08f5c3ed7efd0cda8e20b43e81a0572b0b
