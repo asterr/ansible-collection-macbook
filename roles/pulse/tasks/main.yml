@@ -9,7 +9,8 @@
     checksum: "{{ pulse_checksum }}"
 
 - name: Install Pulse from DMG
-  ansible.builtin.include_tasks: dmg-install.yml
+  ansible.builtin.include_role:
+    name: dmg-install
   vars:
     appName: Pulse Secure
     dmgURL: file:///Users/asterr/Downloads/ps-pulse-mac-9.1r11.5-b9451-installer.dmg
