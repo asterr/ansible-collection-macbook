@@ -1,12 +1,27 @@
 ---
 # tasks file for msoffice
 
+- name: Install gdown with pip
+  # This is needed to download large files
+  # from Google Drive
+  ansible.builtin.pip:
+    name: gdown
+
+- name: Check downloaded file
+  ansible.builtin.stat:
+    path: "{{ package_file }}"
+  register: msoffice_package_file
+
+- ansible.builtin.debug:
+    msg: "{{msoffice_package_file}}"
+
 - name: Download MS Office from Google Drive
-  ansible.builtin.get_url:
-    url: "{{ package_url }}"
-    dest: /Users/asterr/Downloads/Microsoft_Office_16.63.22070801_BusinessPro_Installer.pkg.tmp
-    mode: u=rw,g=r,o=r
-    # checksum: "{{ package_checksum }}"
+  ansible.builtin.command: "gdown --continue -O {{ package_file }} {{ package_url }}"
+  args:
+    creates: "{{ package_file }}"
+  when: >
+    not msoffice_package_file.stat.exists or
+    msoffice_package_file.stat.checksum != package_checksum
 
 - name: Install MS Office from pkg
   ansible.builtin.include_tasks: install.yml
@@ -17,4 +32,4 @@
     - Microsoft Outlook
     - Microsoft PowerPoint
     - Microsoft Word
-    pkgFile: /Users/asterr/Downloads/Microsoft_Office_16.63.22070801_BusinessPro_Installer.pkg
+    pkgFile: "{{ package_file }}"
