@@ -15,4 +15,4 @@ package_url: !vault |
 package_file: /Users/asterr/Downloads/Microsoft_Office_16.63.22070801_BusinessPro_Installer.pkg
 
 # package_checksum: sha512:88d53e4eb99a8632ac104c763c3342a79738863da1ef12a2fbb65483eccc892abf1e4e06bc85dba03ebae87314d70bf9741e259db6e58b7a705fd392f32c5c06
-package_checksum: ""
+package_checksum: 594f4e60706eddac5613798ea1fe7ad59847f893
