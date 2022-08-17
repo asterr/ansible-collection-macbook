@@ -1,0 +1,20 @@
+# Install from Package
+# Ideas taken from: https://github.com/sandstorm/macosx-with-ansible/blob/master/tasks/dmg-install.yml
+
+
+---
+- local_action: "stat path=/Applications/{{ item }}.app"
+  register: app_exists
+  loop: "{{ appNames }}"
+
+- ansible.builtin.debug:
+    msg: "{{ app_exists }}"
+
+# - ansible.builtin.debug:
+#     # msg: "Reduced: {{ app_exists.results | map(attribute='stat') | map(attribute='exists') | select('')}}"
+#     msg: "Reduced: {{ app_exists.results | map(attribute='stat') | selectattr('exists','==',false) }}"
+
+- name: Install MS Office
+  ansible.builtin.shell: "installer -pkg '{{ package_file }}' -target /"
+  when: app_exists.results | map(attribute='stat') | selectattr('exists','==',false)
+  become: true
