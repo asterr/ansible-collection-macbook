@@ -1,0 +1,21 @@
+---
+# tasks file for iterm2
+
+- name: Download iterm2
+  ansible.builtin.get_url:
+    url: "{{ package_url }}"
+    dest: "{{ package_file }}"
+    mode: u=rw,g=r,o=r
+    checksum: "{{ package_checksum }}"
+
+- name: Install iterm2
+  ansible.builtin.unarchive:
+    src: "{{ package_file }}"
+    dest: /Applications/
+    creates: /Applications/iTerm.app
+
+- name: Install preferences
+  ansible.builtin.copy:
+    src: com.googlecode.iterm2.plist
+    dest: /Users/asterr/Library/Preferences
+    backup: yes

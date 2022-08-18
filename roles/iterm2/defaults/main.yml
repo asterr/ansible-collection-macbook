@@ -1,0 +1,11 @@
+---
+# defaults file for iterm2
+
+package_url: https://iterm2.com/downloads/stable/iTerm2-3_4_16.zip
+
+package_file: /Users/asterr/Downloads/iTerm2-3_4_16.zip
+
+package_checksum: >
+  sha512:5d809c7571968a78c2a5e9611855d32bd3b1734603aa6ba0b0fdb66
+  ae7f09f94a10965af3c1f24147e2b0bce447137792d6e64c6c24e74808ef82
+  c30323f9307
