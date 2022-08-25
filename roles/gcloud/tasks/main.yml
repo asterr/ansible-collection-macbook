@@ -1,0 +1,16 @@
+---
+# tasks file for gcloud
+- name: Install Gcloud
+  tags: ['gcloud']
+  ansible.builtin.include_role:
+    name: google.cloud.gcloud
+  vars:
+    gcloud_install_type: archive
+    gcloud_version: 399.0.0
+    gcloud_archive_name: "google-cloud-cli-{{ gcloud_version }}-darwin-arm.tar.gz"
+    gcloud_archive_path: "{{ ansible_env.HOME }}/utils"
+    gcloud_install_script: true
+    gcloud_additional_components:
+      - docker-credential-gcr
+      - beta
+      - kubectl
