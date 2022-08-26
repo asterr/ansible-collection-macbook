@@ -14,3 +14,16 @@
     groups:
       - "{{ ansible_env.USER }}"
   become: true
+
+- ansible.builtin.include_role:
+    name: staticdev.pyenv
+  vars:
+    # pyenv_path: "{{ ansible_env.HOME }}/pyenv"
+    pyenv_global:
+      - 3.10.6
+      - 3.9.4
+    pyenv_python_versions:
+      - 3.10.6
+      - 3.9.4
+    pyenv_virtual_envs: []
+    # pyenv_group: staff
