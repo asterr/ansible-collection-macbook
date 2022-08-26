@@ -1,2 +1,7 @@
 ---
 # tasks file for pyenv
+
+- name: Create group for user
+  ansible.builtin.group:
+    name: "{{ ansible_env.USER }}"
+    state: present
