@@ -1,0 +1,21 @@
+Test:
+
+pyenv versions
+pyenv shell 3.9.4
+python -V
+pyenv shell 3.10.6
+python -V
+pyenv virtualenv-init 3.9.4-test
+pyenv activate 3.9.4-test
+python -V
+
+
+# .zprofile
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
+eval "$(pyenv init --path)"
+alias python=python3
+
+# Shell
+antigen bundle pyenv
+
