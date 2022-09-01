@@ -27,6 +27,18 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - { role: username.rolename, x: 42 }
 
+Tests
+-------
+
+    pyenv versions
+    pyenv shell 3.9.4
+    python -V
+    pyenv shell 3.10.6
+    python -V
+    pyenv virtualenv 3.9.4 test-3.9.4
+    pyenv activate test-3.9.4
+    python -V
+
 License
 -------
 
