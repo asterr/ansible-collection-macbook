@@ -1,0 +1,15 @@
+---
+# tasks file for iodata
+
+- name: Download Magical Finder
+  ansible.builtin.get_url:
+    url: "{{ package_url }}"
+    dest: "{{ package_file }}"
+    mode: u=rw,g=r,o=r
+    checksum: "{{ package_checksum }}"
+
+- name: Install Magical Finder
+  ansible.builtin.unarchive:
+    src: "{{ package_file }}"
+    dest: /Applications/
+    creates: /Applications/Magical Finder.app
