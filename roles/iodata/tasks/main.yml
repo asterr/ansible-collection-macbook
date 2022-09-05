@@ -8,7 +8,7 @@
     mode: u=rw,g=r,o=r
     checksum: "{{ package_checksum }}"
 
-- name: Install iterm2
+- name: Install Magical Finder
   ansible.builtin.unarchive:
     src: "{{ package_file }}"
     dest: /Applications/
