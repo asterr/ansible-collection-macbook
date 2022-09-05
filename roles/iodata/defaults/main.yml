@@ -1,0 +1,11 @@
+---
+# defaults file for iodata
+
+package_url: https://lib.iodata.jp/lib/soft/m/Magical%20Finder%20for%20Mac_v420.zip
+
+package_file: /Users/asterr/Downloads/Magical Finder for Mac_v420.zip
+
+package_checksum: >
+  sha512:2c410c0371eabe5e69ea1556f252c1dd44586635f5db4dc1c59c45d
+  5cc40aea9ee1c1eef6cf495619d65fbd2ec86dc8510e63536b99ff9bb1d46a
+  eed037da55a
