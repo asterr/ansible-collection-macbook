@@ -4,8 +4,7 @@
 app_name: 'YouTube Music Desktop'
 
 package_url: >
-  https://github.com/ytmdesktop/ytmdesktop/releases/download/
-  v1.13.0/YouTube-Music-Desktop-App-1.13.0.dmg
+  https://github.com/ytmdesktop/ytmdesktop/releases/download/v1.13.0/YouTube-Music-Desktop-App-1.13.0.dmg
 
 package_file: /Users/asterr/Downloads/YouTube-Music-Desktop-App-1.13.0.dmg
 
