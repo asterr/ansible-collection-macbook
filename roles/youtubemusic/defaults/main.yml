@@ -1,0 +1,14 @@
+---
+# defaults file for youtubemusic
+
+app_name: 'YouTube Music Desktop'
+
+package_url: >
+  https://github.com/ytmdesktop/ytmdesktop/releases/download/v1.13.0/YouTube-Music-Desktop-App-1.13.0.dmg
+
+package_file: /Users/asterr/Downloads/YouTube-Music-Desktop-App-1.13.0.dmg
+
+package_checksum: >
+  sha512:44d68fe6eeee7fac8ece5343d0d57984b27381a6e482d95630c5789
+  1a9dfe51307d318fa34bc0b5dde94f3648d5e81608b17513478dc010ec2593
+  62d2abd5595

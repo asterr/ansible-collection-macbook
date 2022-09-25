@@ -1,0 +1,16 @@
+---
+# tasks file for youtubemusic
+
+- name: Download Installer
+  ansible.builtin.get_url:
+    url: "{{ package_url }}"
+    dest: "{{ package_file }}"
+    mode: u=rw,g=r,o=r
+    checksum: "{{ package_checksum }}"
+
+- name: Install Package
+  ansible.builtin.include_role:
+    name: dmg-install
+  vars:
+    appName: "{{ app_name }}"
+    dmgURL: "file://{{ package_file }}"

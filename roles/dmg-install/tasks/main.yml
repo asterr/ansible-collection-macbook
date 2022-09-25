@@ -19,6 +19,7 @@
 - find:
     paths: "./tmp/{{ appName }}/"
     patterns: "*.app"
+    file_type: "any"
   register: app_type
 
 - block:
@@ -30,6 +31,7 @@
 - find:
     paths: "./tmp/{{ appName }}/"
     patterns: "*.pkg"
+    file_type: "any"
   register: pkg_type
 
 - block:
