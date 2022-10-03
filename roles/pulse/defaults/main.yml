@@ -13,3 +13,5 @@ pulse_url: !vault |
           6262
 
 pulse_checksum: sha512:22d0e017626403b36a762e2e5bde4167b907f61ea330d33e31bc75c141dd0c2efc27910cff70cbb8005a603b3b65439ffc563f37fb9120f527cefbafa6db2ef8
+
+package_file: /Users/asterr/Downloads/ps-pulse-mac-9.1r11.5-b9451-installer.dmg

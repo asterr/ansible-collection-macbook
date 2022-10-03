@@ -1,16 +1,31 @@
 ---
 # tasks file for pulse
 
+- name: Install gdown with pip
+  # This is needed to download large files
+  # from Google Drive
+  ansible.builtin.pip:
+    name: gdown
+
+- name: Check downloaded file
+  ansible.builtin.stat:
+    path: "{{ package_file }}"
+  register: pulse_package_file
+
+- ansible.builtin.debug:
+    msg: "{{pulse_package_file}}"
+
 - name: Download Pulse from Google Drive
-  ansible.builtin.get_url:
-    url: "{{ pulse_url }}"
-    dest: /Users/asterr/Downloads/ps-pulse-mac-9.1r11.5-b9451-installer.dmg
-    mode: u=rw,g=r,o=r
-    checksum: "{{ pulse_checksum }}"
+  ansible.builtin.command: "gdown --continue -O {{ package_file }} {{ pulse_url }}"
+  args:
+    creates: "{{ package_file }}"
+  when: >
+    not pulse_package_file.stat.exists or
+    pulse_package_file.stat.checksum != package_checksum
 
 - name: Install Pulse from DMG
   ansible.builtin.include_role:
     name: dmg-install
   vars:
     appName: Pulse Secure
-    dmgURL: file:///Users/asterr/Downloads/ps-pulse-mac-9.1r11.5-b9451-installer.dmg
+    dmgURL: "file://{{ package_file }}"
