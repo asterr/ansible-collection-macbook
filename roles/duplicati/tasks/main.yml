@@ -1,2 +1,11 @@
 ---
 # tasks file for duplicati
+
+- name: Install mount script for duplicati001
+  ansible.builtin.template:
+    src: mount-script.j2
+    dest: "/Users/{{ username }}/Library/Scripts/mount-duplicati001.sh"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: "0755"
+    backup: yes

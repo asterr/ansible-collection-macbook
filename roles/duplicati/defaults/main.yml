@@ -1,2 +1,12 @@
 ---
 # defaults file for duplicati
+
+username: asterr
+password: "REPLACE_THIS"
+
+nas_ip_address: "0.0.0.0"
+nas_shares:
+  - share1
+  - share2
+
+mountpoint: "/Users/{{ username }}/nasmounts"
