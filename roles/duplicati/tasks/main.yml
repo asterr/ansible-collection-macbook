@@ -1,10 +1,18 @@
 ---
 # tasks file for duplicati
 
-- name: Install mount script for duplicati001
+- name: Setup nasmounts directory
+  ansible.builtin.file:
+    path: "/Users/{{ username }}/nasmounts"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: '0755'
+    state: directory
+
+- name: "Install mount script for {{nas_name}}"
   ansible.builtin.template:
     src: mount-script.j2
-    dest: "/Users/{{ username }}/Library/Scripts/mount-duplicati001.sh"
+    dest: "/Users/{{ username }}/Library/Scripts/mount-{{nas_name}}.sh"
     owner: "{{ username }}"
     group: "{{ username }}"
     mode: "0755"
