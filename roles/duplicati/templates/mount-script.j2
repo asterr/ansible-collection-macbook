@@ -165,12 +165,16 @@ done
 if [[ -e "/tmp/resume_duplicati" ]] ; then
   sleep 60
   (date; echo "resume duplicati"; /usr/bin/pkill -CONT mono) >> /var/tmp/mono-pkill.log
-  (/bin/ps -o state,pid,comm -p `/usr/bin/pgrep mono`) >> /var/tmp/mono-pkill.log
+  if MONOPID=$(/usr/bin/pgrep mono) ; then
+    (/bin/ps -o state,pid,comm -p ${MONOPID}) >> /var/tmp/mono-pkill.log
+  fi
   rm -f /tmp/resume_duplicati
 fi
 
 if [[ -e "/tmp/pause_duplicati" ]] ; then
   (date; echo "pause duplicati"; /usr/bin/pkill -STOP mono) >> /var/tmp/mono-pkill.log
-  (/bin/ps -o state,pid,comm -p `/usr/bin/pgrep mono`) >> /var/tmp/mono-pkill.log
+  if MONOPID=$(/usr/bin/pgrep mono) ; then
+    (/bin/ps -o state,pid,comm -p ${MONOPID}) >> /var/tmp/mono-pkill.log
+  fi
   rm -f /tmp/pause_duplicati
 fi
