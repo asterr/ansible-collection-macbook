@@ -1,0 +1,556 @@
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="Apple-Mail=_BBB51CF9-CB43-4775-BE9E-238C056F6A92"
+Subject: Duplicati Setup on Mac
+Mime-Version: 1.0 (Mac OS X Mail 10.3 \(3273\))
+X-Apple-Base-Url: x-msg://23/
+X-Universally-Unique-Identifier: 646B965F-6195-403B-AECD-386ADCB05A38
+X-Apple-Mail-Remote-Attachments: YES
+From: Aaron Sterr (home) <asterr@pobox.com>
+X-Mailtags-Timestamp: 1970-01-01 09:00:00 +0900
+X-Apple-Windows-Friendly: 1
+Date: Thu, 28 Sep 2017 08:43:26 +0900
+X-Mailtags-Version: 4
+Message-Id: <AA9D7BBB-0E39-4028-BEBA-4A854005782D@pobox.com>
+X-Mailtags: {"kw":["duplicati"]}
+X-Uniform-Type-Identifier: com.apple.mail-draft
+
+
+--Apple-Mail=_BBB51CF9-CB43-4775-BE9E-238C056F6A92
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head></head><body dir=3D"auto" style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><div =
+dir=3D"auto" style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space;"><div dir=3D"auto" =
+style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space;"><div dir=3D"auto" =
+style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; =
+-webkit-line-break: after-white-space;"><b style=3D"font-size: =
+14px;">Install =
+Duplicati</b><div><br></div><div>duplicati-2.0.2.1_beta_2017-08-01.dmg</di=
+v><div><br></div><div><br></div><div style=3D"font-size: 14px;"><b>Run =
+Duplicati As a Service</b></div><div><br></div><div><div =
+style=3D"font-size: 9px;"><font =
+face=3D"Courier">Aaron-Sterrs-MacBook-Pro.local: asterr/ $ cat =
+~/Library/LaunchAgents/net.duplicati.plist</font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier">&lt;?xml version=3D"1.0" =
+encoding=3D"UTF-8"?&gt;</font></div><div style=3D"font-size: 9px;"><font =
+face=3D"Courier">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" =
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier">&lt;plist =
+version=3D"1.0"&gt;</font></div><div style=3D"font-size: 9px;"><font =
+face=3D"Courier">&lt;dict&gt;</font></div><div style=3D"font-size: =
+9px;"><font face=3D"Courier">&nbsp; &nbsp; =
+&lt;key&gt;Label&lt;/key&gt;</font></div><div style=3D"font-size: =
+9px;"><font face=3D"Courier">&nbsp; &nbsp; =
+&lt;string&gt;net.duplicati&lt;/string&gt;</font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier">&nbsp; &nbsp; =
+&lt;key&gt;ProgramArguments&lt;/key&gt;</font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier">&nbsp; &nbsp; =
+&lt;array&gt;</font></div><div style=3D"font-size: 9px;"><font =
+face=3D"Courier">&nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;string&gt;/Applications/Duplicati.app/Contents/MacOS/duplicati-server&=
+lt;/string&gt;</font></div><div style=3D"font-size: 9px;"><font =
+face=3D"Courier">&nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;string&gt;--webservice-port=3D8200&lt;/string&gt;</font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier">&nbsp; &nbsp; &nbsp; =
+&nbsp; =
+&lt;string&gt;--log-file=3D/Users/asterr/Library/Logs/duplicati.log&lt;/st=
+ring&gt;</font></div><div style=3D"font-size: 9px;"><font =
+face=3D"Courier">&nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;string&gt;&lt;/string&gt;</font></div><div style=3D"font-size: =
+9px;"><font face=3D"Courier">&nbsp; &nbsp; &nbsp; &nbsp; =
+&lt;string&gt;&amp;amp;&lt;/string&gt;</font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier">&nbsp; &nbsp; =
+&lt;/array&gt;</font></div><div style=3D"font-size: 9px;"><font =
+face=3D"Courier">&nbsp; &nbsp; =
+&lt;key&gt;RunAtLoad&lt;/key&gt;</font></div><div style=3D"font-size: =
+9px;"><font face=3D"Courier">&nbsp; &nbsp; =
+&lt;true/&gt;</font></div><div style=3D"font-size: 9px;"><font =
+face=3D"Courier">&lt;/dict&gt;</font></div><div style=3D"font-size: =
+9px;"><font face=3D"Courier">&lt;/plist&gt;</font></div></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier"><br></font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier"><br></font></div><div =
+style=3D"font-size: 9px;"><font face=3D"Courier"><br></font></div><div =
+style=3D"font-size: 9px;"><font =
+face=3D"Courier">Aaron-Sterrs-MacBook-Pro.local: asterr/ $ launchctl =
+load -w =
+~/Library/LaunchAgents/net.duplicati.plist</font></div><div><br></div><div=
+><br></div><div style=3D"font-size: 14px;"><b>Mount =
+Disks</b></div><div><br></div><div><br></div><div>Aaron-Sterrs-MacBook-Pro=
+.local: asterr/ $ vi =
+~/Library/Scripts/mount-duplicati001.sh</div><div>Aaron-Sterrs-MacBook-Pro=
+.local: asterr/ $ vi =
+~/Library/Scripts/mount-duplicati002.sh</div><div><br></div><div><br></div=
+><div><br></div><div><br></div><div><object =
+type=3D"application/x-apple-msg-attachment" =
+data=3D"cid:189A913F-1118-4C1A-A951-DEE400F44FF9@wi2.ne.jp" =
+apple-inline=3D"no" id=3D"218616BF-2A6C-4C3E-A4C9-BE2DD1DE2E57" =
+height=3D"102" width=3D"106" apple-width=3D"yes" =
+apple-height=3D"yes"></object><object =
+type=3D"application/x-apple-msg-attachment" =
+data=3D"cid:2DE6460F-AA81-4D03-9A7D-2540A4B1DBEC@wi2.ne.jp" =
+apple-inline=3D"no" id=3D"A320AD49-E2CC-4ADC-9A39-A1BFA695F11E" =
+height=3D"102" width=3D"108" apple-width=3D"yes" =
+apple-height=3D"yes"></object></div><div><br></div><div><br></div><div><br=
+></div><div><div><font face=3D"Courier">Aaron-Sterrs-MacBook-Pro.local: =
+asterr/ $ cat =
+~/Library/LaunchAgents/com.mount.duplicati001.plist</font></div><div><font=
+ face=3D"Courier">&lt;?xml version=3D"1.0" =
+encoding=3D"UTF-8"?&gt;</font></div><div><font =
+face=3D"Courier">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" =
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</font></div><div><fon=
+t face=3D"Courier">&lt;plist version=3D"1.0"&gt;</font></div><div><font =
+face=3D"Courier">&lt;!-- =
+~/Library/LaunchAgents/com.mount.duplicati001.plist =
+--&gt;</font></div><div><font =
+face=3D"Courier">&lt;dict&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;key&gt;Label&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	=
+</span>&lt;string&gt;com.mount.duplicati001&lt;/string&gt;</font></div><di=
+v><font face=3D"Courier"><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	=
+</span>&lt;key&gt;ProgramArguments&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;array&gt;</font></div><div><font face=3D"Courier"><span=
+ class=3D"Apple-tab-span" style=3D"white-space:pre">		=
+</span>&lt;string&gt;/Users/asterr/Library/Scripts/mount-duplicati001.sh&l=
+t;/string&gt;</font></div><div><font face=3D"Courier"><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>&lt;/array&gt;</font></div><div><font face=3D"Courier"><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>&lt;key&gt;RunAtLoad&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;true/&gt;</font></div><div><font face=3D"Courier"><span=
+ class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>&lt;key&gt;StartInterval&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;integer&gt;60&lt;/integer&gt;</font></div><div><font =
+face=3D"Courier">&lt;/dict&gt;</font></div><div><font =
+face=3D"Courier">&lt;/plist&gt;</font></div><div><font =
+face=3D"Courier">Aaron-Sterrs-MacBook-Pro.local: asterr/ $ launchctl =
+load -w =
+~/Library/LaunchAgents/com.mount.duplicati001.plist</font></div><div><span=
+ style=3D"font-family: Courier;"><br></span></div><div><span =
+style=3D"font-family: Courier;"><br></span></div><div><span =
+style=3D"font-family: Courier;"><br></span></div><div><span =
+style=3D"font-family: Courier;">Aaron-Sterrs-MacBook-Pro.local: asterr/ =
+$ cat =
+~/Library/LaunchAgents/com.mount.duplicati002.plist</span></div><div><font=
+ face=3D"Courier">&lt;?xml version=3D"1.0" =
+encoding=3D"UTF-8"?&gt;</font></div><div><font =
+face=3D"Courier">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" =
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</font></div><div><fon=
+t face=3D"Courier">&lt;plist version=3D"1.0"&gt;</font></div><div><font =
+face=3D"Courier">&lt;!-- =
+~/Library/LaunchAgents/com.mount.duplicati002.plist =
+--&gt;</font></div><div><font =
+face=3D"Courier">&lt;dict&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;key&gt;Label&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	=
+</span>&lt;string&gt;com.mount.duplicati002&lt;/string&gt;</font></div><di=
+v><font face=3D"Courier"><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	=
+</span>&lt;key&gt;ProgramArguments&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;array&gt;</font></div><div><font face=3D"Courier"><span=
+ class=3D"Apple-tab-span" style=3D"white-space:pre">		=
+</span>&lt;string&gt;/Users/asterr/Library/Scripts/mount-duplicati002.sh&l=
+t;/string&gt;</font></div><div><font face=3D"Courier"><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>&lt;/array&gt;</font></div><div><font face=3D"Courier"><span =
+class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>&lt;key&gt;RunAtLoad&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;true/&gt;</font></div><div><font face=3D"Courier"><span=
+ class=3D"Apple-tab-span" style=3D"white-space:pre">	=
+</span>&lt;key&gt;StartInterval&lt;/key&gt;</font></div><div><font =
+face=3D"Courier"><span class=3D"Apple-tab-span" style=3D"white-space:pre">=
+	</span>&lt;integer&gt;60&lt;/integer&gt;</font></div><div><font =
+face=3D"Courier">&lt;/dict&gt;</font></div><div><font =
+face=3D"Courier">&lt;/plist&gt;</font></div><div><font =
+face=3D"Courier">Aaron-Sterrs-MacBook-Pro.local: asterr/ $ launchctl =
+load -w =
+~/Library/LaunchAgents/com.mount.duplicati002.plist</font></div></div><div=
+><br></div><div><br></div><div><br></div></div></div></div></body></html>=
+
+--Apple-Mail=_BBB51CF9-CB43-4775-BE9E-238C056F6A92
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+	filename=mount-duplicati001.sh
+Content-Type: application/octet-stream;
+	x-unix-mode=0755;
+	name="mount-duplicati001.sh"
+Content-Id: <189A913F-1118-4C1A-A951-DEE400F44FF9@wi2.ne.jp>
+
+#!/bin/bash
+# mount.sh
+
+###############################################################################
+# SET YOUR PREFS HERE - READ BELOW BEFORE RUNNING SCRIPT                      #
+# RUN AT YOUR OWN RISK, MAKE BACKUPS OF YOUR DATA ALWAYS                      #
+#	   				                                      #
+# PASSWORD: If your password contains symbols, they must be url encoded       #
+#           ie: "@" becomes "%40". To encode your password, use this site:    #
+#           http://www.opinionatedgeek.com/dotnet/tools/urlencode/Encode.aspx #
+#                                                                             #
+# SHARES:   Separated with spaces, case sensitive                             #
+#           If shares have spaces, use %20 instead of space. ie HD%20Movies   #
+#                                                                             #
+# ITUNES:   FALSE = Don"t Open, TRUE = Open                                   #
+#                                                                             #
+# PROTOCOL: afp OR smb   - lowercase                                          #
+#                                                                             #
+# WAKE:     FALSE = Don't wake, TRUE = Wake                                   #
+#           If you select True, server will initiate wake on lan at specified #
+#           time. Requires wolcmd in script location, MAC address, subnet and #
+#           the times it should wake the server.                              #
+#                                                                             #
+###############################################################################
+
+#-----------------------------#
+# Required for share mounting #
+#-----------------------------#
+
+# Script Location
+SCRIPTLOCATION="/Users/asterr/Library/Scripts"
+
+# Username for server
+USERNAME="asterr"
+
+# Password for server, check notes
+PASSWORD="REDACTED"
+
+# IP Address/hostname for ping
+PING="192.168.2.143"
+
+# Hostname for server. Try sername.local, hostname or IP
+HOSTNAME="192.168.2.143"
+
+# Protocol in lowercase, afp or smb
+PROTOCOL="smb"
+
+# Shares, check notes
+SHARES="duplicati001 Public"
+
+
+##############################
+# Don"t edit past this point #
+##############################
+
+
+# Mountpoint - Don't edit this unless you know what you're doing.
+MOUNT="/Users/asterr/nasmounts"
+
+# Check if server is available
+if ( ping -q -c 5 $PING ); then
+
+	AVAILABLE="TRUE"
+
+	# Loop through shares to mount them
+	for s in $SHARES
+
+	do
+
+		# Parse spaces for mkdir
+		SPACESHARE=$(echo $s|sed "s/%20/ /g")
+
+		# Check to see if mount doesn't exist, then mounts either AFP or SMB.
+		if [ ! -d "$MOUNT/$SPACESHARE" ]; then
+
+			mkdir "$MOUNT/$SPACESHARE"
+
+			if [ $PROTOCOL == "smb" ]; then
+
+				echo "Mounting $SPACESHARE ..."
+				mount_smbfs -o nostreams //$USERNAME:$PASSWORD@$HOSTNAME/$s "$MOUNT/$SPACESHARE"
+
+				if [ ! "$?" -eq "0" ]; then
+
+					if [ "$(ls -A "$MOUNT/$SPACESHARE")" ]; then
+
+  						echo "Mount failed. Check settings/server. Could not delete $MOUNT/$SPACESHARE as it contains files. Please check."
+						echo "*************"
+						AVAILABLE="FALSE"
+
+					else
+
+						echo "$SPACESHARE mount failed. Check settings/server. Removing mount point."
+						echo "*************"
+						rmdir "$MOUNT/$SPACESHARE"
+						AVAILABLE="FALSE"
+
+					fi
+
+				fi
+
+			elif [ $PROTOCOL == "afp" ]; then
+
+				echo "Mounting $SPACESHARE"
+				mount_afp afp://$USERNAME:$PASSWORD@$HOSTNAME/$s "$MOUNT/$SPACESHARE"
+
+				if [ ! "$?" -eq "0" ]; then
+
+					if [ "$(ls -A "$MOUNT/$SPACESHARE")" ]; then
+
+  						echo "Mount failed. Check settings/server. Could not remove $MOUNT/$SPACESHARE as it contains files. Please check."
+						echo "*************"
+						AVAILABLE="FALSE"
+
+					else
+
+						echo "$SPACESHARE mount failed. Check settings/server. Removing mount point."
+						echo "*************"
+						rmdir "$MOUNT/$SPACESHARE"
+						AVAILABLE="FALSE"
+
+					fi
+
+				fi
+
+			fi
+		else
+
+                        if ! df "$MOUNT/$SPACESHARE" | grep -q @ ; then
+			  sudo rm -rf "$MOUNT/$SPACESHARE"
+                        else
+			  # If shares are already mounted, don't do anything
+			  echo "$SPACESHARE already mounted"
+                        fi
+		fi
+
+	done
+
+else
+
+	DATE=`date +%H`
+	DATE=`echo $DATE|sed 's/^0*//'`
+	AVAILABLE="FALSE"
+
+	# Loop through shares to unmount them, if mounted.
+	for s in $SHARES
+
+	do
+
+		# Parse spaces for umount	
+		SPACESHARE=$(echo $s|sed "s/%20/ /g")
+
+		# Check to see if mount exists, then unmount
+		if [ -d "$MOUNT/$SPACESHARE" ]; then
+
+			echo "Unmounting $SPACESHARE"
+			umount "$MOUNT/$SPACESHARE"
+                        if ! df "$MOUNT/$SPACESHARE" | grep -q @ ; then
+			  sudo rm -rf "$MOUNT/$SPACESHARE"
+                        fi
+		fi
+
+	done
+
+	if [ $WAKE == "TRUE" ]; then
+	
+		if [[ $DATE -ge $HOURSTART && $DATE -lt $HOUREND ]] || [ $1 == "wake" ]; then
+
+			echo "Waking Server"
+			$SCRIPTLOCATION/wolcmd $MACADDRESS $PING $SUBNET 4343
+
+		fi
+
+	fi
+
+fi
+
+--Apple-Mail=_BBB51CF9-CB43-4775-BE9E-238C056F6A92
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+	filename=mount-duplicati002.sh
+Content-Type: application/octet-stream;
+	x-unix-mode=0755;
+	name="mount-duplicati002.sh"
+Content-Id: <2DE6460F-AA81-4D03-9A7D-2540A4B1DBEC@wi2.ne.jp>
+
+#!/bin/bash
+# mount.sh
+
+###############################################################################
+# SET YOUR PREFS HERE - READ BELOW BEFORE RUNNING SCRIPT                      #
+# RUN AT YOUR OWN RISK, MAKE BACKUPS OF YOUR DATA ALWAYS                      #
+#	   				                                      #
+# PASSWORD: If your password contains symbols, they must be url encoded       #
+#           ie: "@" becomes "%40". To encode your password, use this site:    #
+#           http://www.opinionatedgeek.com/dotnet/tools/urlencode/Encode.aspx #
+#                                                                             #
+# SHARES:   Separated with spaces, case sensitive                             #
+#           If shares have spaces, use %20 instead of space. ie HD%20Movies   #
+#                                                                             #
+# ITUNES:   FALSE = Don"t Open, TRUE = Open                                   #
+#                                                                             #
+# PROTOCOL: afp OR smb   - lowercase                                          #
+#                                                                             #
+# WAKE:     FALSE = Don't wake, TRUE = Wake                                   #
+#           If you select True, server will initiate wake on lan at specified #
+#           time. Requires wolcmd in script location, MAC address, subnet and #
+#           the times it should wake the server.                              #
+#                                                                             #
+###############################################################################
+
+#-----------------------------#
+# Required for share mounting #
+#-----------------------------#
+
+# Script Location
+SCRIPTLOCATION="/Users/asterr/Library/Scripts"
+
+# Username for server
+USERNAME="asterr"
+
+# Password for server, check notes
+PASSWORD="REDACTED"
+
+# IP Address/hostname for ping
+PING="192.168.2.144"
+
+# Hostname for server. Try sername.local, hostname or IP
+HOSTNAME="192.168.2.144"
+
+# Protocol in lowercase, afp or smb
+PROTOCOL="smb"
+
+# Shares, check notes
+SHARES="duplicati002"
+
+
+##############################
+# Don"t edit past this point #
+##############################
+
+
+# Mountpoint - Don't edit this unless you know what you're doing.
+MOUNT="/Users/asterr/nasmounts"
+
+# Check if server is available
+if ( ping -q -c 5 $PING ); then
+
+	AVAILABLE="TRUE"
+
+	# Loop through shares to mount them
+	for s in $SHARES
+
+	do
+
+		# Parse spaces for mkdir	
+		SPACESHARE=$(echo $s|sed "s/%20/ /g")
+
+		# Check to see if mount doesn't exist, then mounts either AFP or SMB.
+		if [ ! -d "$MOUNT/$SPACESHARE" ]; then
+
+			mkdir "$MOUNT/$SPACESHARE"
+
+			if [ $PROTOCOL == "smb" ]; then
+
+				echo "Mounting $SPACESHARE ..."
+				mount_smbfs -o nostreams //$USERNAME:$PASSWORD@$HOSTNAME/$s "$MOUNT/$SPACESHARE"
+
+				if [ ! "$?" -eq "0" ]; then
+
+					if [ "$(ls -A "$MOUNT/$SPACESHARE")" ]; then
+
+  						echo "Mount failed. Check settings/server. Could not delete $MOUNT/$SPACESHARE as it contains files. Please check."
+						echo "*************"
+						AVAILABLE="FALSE"
+
+					else
+
+						echo "$SPACESHARE mount failed. Check settings/server. Removing mount point."
+						echo "*************"
+						rmdir "$MOUNT/$SPACESHARE"
+						AVAILABLE="FALSE"
+
+					fi
+						
+				fi
+
+			elif [ $PROTOCOL == "afp" ]; then
+
+				echo "Mounting $SPACESHARE"
+				mount_afp afp://$USERNAME:$PASSWORD@$HOSTNAME/$s "$MOUNT/$SPACESHARE"
+
+				if [ ! "$?" -eq "0" ]; then
+
+					if [ "$(ls -A "$MOUNT/$SPACESHARE")" ]; then
+
+  						echo "Mount failed. Check settings/server. Could not remove $MOUNT/$SPACESHARE as it contains files. Please check."
+						echo "*************"
+						AVAILABLE="FALSE"
+
+					else
+
+						echo "$SPACESHARE mount failed. Check settings/server. Removing mount point."
+						echo "*************"
+						rmdir "$MOUNT/$SPACESHARE"
+						AVAILABLE="FALSE"
+
+					fi
+						
+				fi
+
+			fi
+		else
+
+                        if ! df "$MOUNT/$SPACESHARE" | grep -q @ ; then
+                          sudo rm -rf "$MOUNT/$SPACESHARE"
+                        else
+                          # If shares are already mounted, don't do anything
+                          echo "$SPACESHARE already mounted"
+                        fi
+		fi
+	
+	done	
+
+else
+
+	DATE=`date +%H`
+	DATE=`echo $DATE|sed 's/^0*//'`
+	AVAILABLE="FALSE"
+
+	# Loop through shares to unmount them, if mounted.
+	for s in $SHARES
+
+	do
+
+		# Parse spaces for umount	
+		SPACESHARE=$(echo $s|sed "s/%20/ /g")
+
+		# Check to see if mount exists, then unmount
+		if [ -d "$MOUNT/$SPACESHARE" ]; then
+
+			echo "Unmounting $SPACESHARE"
+			umount "$MOUNT/$SPACESHARE"
+                        if ! df "$MOUNT/$SPACESHARE" | grep -q @ ; then
+			  sudo rm -rf "$MOUNT/$SPACESHARE"
+                        fi
+		fi
+
+	done
+
+	if [ $WAKE == "TRUE" ]; then
+	
+		if [[ $DATE -ge $HOURSTART && $DATE -lt $HOUREND ]] || [ $1 == "wake" ]; then
+
+			echo "Waking Server"
+			$SCRIPTLOCATION/wolcmd $MACADDRESS $PING $SUBNET 4343
+
+		fi
+
+	fi
+
+fi
+
+--Apple-Mail=_BBB51CF9-CB43-4775-BE9E-238C056F6A92--
