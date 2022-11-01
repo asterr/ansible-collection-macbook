@@ -17,3 +17,18 @@
     group: "{{ username }}"
     mode: "0755"
     backup: yes
+
+- name: "Install launchagent script for {{nas_name}}"
+  ansible.builtin.template:
+    src: com.pobox.mount.nasdevice.plist.j2
+    dest: "/Users/{{ username }}/Library/LaunchAgents/com.pobox.mount.{{ nas_name }}.plist"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: "0755"
+    backup: yes
+
+- name: "Load launch agent to manage mount for {{nas_name}}"
+  community.general.launchd:
+    name: "com.pobox.mount.{{ nas_name }}"
+    enabled: yes
+    state: started
