@@ -1,0 +1,63 @@
+---
+# tasks file for duplicati
+
+- name: Setup nasmounts directory
+  ansible.builtin.file:
+    path: "/Users/{{ username }}/nasmounts"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: '0755'
+    state: directory
+
+- name: "Install mount script for {{nas_name}}"
+  ansible.builtin.template:
+    src: mount-script.j2
+    dest: "/Users/{{ username }}/Library/Scripts/mount-{{nas_name}}.sh"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: "0755"
+    backup: yes
+
+- name: "Install launchagent script for {{nas_name}}"
+  ansible.builtin.template:
+    src: com.pobox.mount.nasdevice.plist.j2
+    dest: "/Users/{{ username }}/Library/LaunchAgents/com.pobox.mount.{{ nas_name }}.plist"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: "0755"
+    backup: yes
+
+- name: "Load launch agent to manage mount for {{nas_name}}"
+  community.general.launchd:
+    name: "com.pobox.mount.{{ nas_name }}"
+    enabled: yes
+    state: started
+
+- name: Download Installer
+  ansible.builtin.get_url:
+    url: "{{ package_url }}"
+    dest: "{{ package_file }}"
+    mode: u=rw,g=r,o=r
+    checksum: "{{ package_checksum }}"
+
+- name: Install Package
+  ansible.builtin.include_role:
+    name: dmg-install
+  vars:
+    appName: "{{ app_name }}"
+    dmgURL: "file://{{ package_file }}"
+
+- name: "Install launchagent script for Duplicati"
+  ansible.builtin.template:
+    src: net.duplicati.plist.j2
+    dest: "/Users/{{ username }}/Library/LaunchAgents/net.duplicati.plist"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: "0755"
+    backup: yes
+
+- name: "Load launch agent for Duplicati"
+  community.general.launchd:
+    name: net.duplicati
+    enabled: yes
+    state: started
