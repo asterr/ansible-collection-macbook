@@ -10,3 +10,15 @@ nas_shares:
   - share2
 
 mountpoint: "/Users/{{ username }}/nasmounts"
+
+app_name: 'Duplicati'
+
+package_url: >
+  https://github.com/duplicati/duplicati/releases/download/v2.0.6.104-2.0.6.104_canary_2022-06-15/duplicati-2.0.6.104_canary_2022-06-15.dmg
+
+package_file: /Users/asterr/Downloads/duplicati-2.0.6.104_canary_2022-06-15.dmg
+
+package_checksum: >
+  sha512:7fe9a2710aac31b22bb75a51a7b6b7bb1d6d38311313b4104cded42
+  2eb15aa689f44e8afef7499ae5545fd1d98eab171568c6393f13756c5f10bf
+  bd50449ddc8
