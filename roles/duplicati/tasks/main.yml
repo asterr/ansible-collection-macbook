@@ -46,3 +46,18 @@
   vars:
     appName: "{{ app_name }}"
     dmgURL: "file://{{ package_file }}"
+
+- name: "Install launchagent script for Duplicati"
+  ansible.builtin.template:
+    src: net.duplicati.plist.j2
+    dest: "/Users/{{ username }}/Library/LaunchAgents/net.duplicati.plist"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: "0755"
+    backup: yes
+
+- name: "Load launch agent for Duplicati"
+  community.general.launchd:
+    name: net.duplicati
+    enabled: yes
+    state: started
